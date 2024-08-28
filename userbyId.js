@@ -1,4 +1,4 @@
-const userData = require('../data')
+const userData = require('./data')
 
 const getuserbyId = (req,res) => {
     const {id} = req;

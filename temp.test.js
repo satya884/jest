@@ -1,5 +1,5 @@
 
-const getuserbyId = require('./handlers/userbyId')
+const getuserbyId = require('./userbyId')
 const userData = require('./data')
 
 const mockRequest = {

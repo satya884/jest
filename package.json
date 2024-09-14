@@ -3,12 +3,29 @@
   "version": "1.0.0",
   "main": "data.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "jest": "^29.7.0"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageDirectory": "coverage",
+    "coverageReporters": ["html", "text"],
+    "reporters": [
+      "default",
+      ["jest-html-reporter", {
+        "pageTitle": "Test Report",
+        "outputPath": "test-report.html",
+        "includeFailureMsg": true,
+        "includeSuiteFailure": true
+      }]
+    ]
+  },
+  "devDependencies": {
+    "jest-html-reporter": "^3.4.0"
   }
 }

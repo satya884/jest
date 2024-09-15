@@ -14,18 +14,23 @@
   "jest": {
     "collectCoverage": true,
     "coverageDirectory": "coverage",
-    "coverageReporters": ["html", "text"],
+    "coverageReporters": ["lcov", "html", "text"],
     "reporters": [
       "default",
+      ["jest-junit", {
+       "outputDirectory": "./test-results",
+       "outputName": "test-report.xml", 
+       "includeSuiteFailure": true
+      }],
       ["jest-html-reporter", {
         "pageTitle": "Test Report",
-        "outputPath": "test-report.html",
-        "includeFailureMsg": true,
-        "includeSuiteFailure": true
+        "outputPath": "./test-results/test-report.html",
+        "includeFailureMsg": true
       }]
     ]
   },
   "devDependencies": {
-    "jest-html-reporter": "^3.4.0"
+    "jest-html-reporter": "^3.4.0",
+    "jest-junit": "16.0.0"
   }
 }
